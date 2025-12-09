@@ -1,13 +1,14 @@
-This project is an Employee Performance Prediction dashboard built with FastAPI and a machine‑learning model trained on the “Garments Worker Productivity” dataset.​
-![Employee performance ML model ](image.png)
-Overview
-This application predicts employee productivity and visualizes key trends from a real manufacturing dataset.​
-It provides a simple web interface where users can explore data insights and generate productivity predictions for different teams and departments.​
 # 👔 Employee Performance Prediction Dashboard
 
 A full-stack **machine learning web app** built with **FastAPI** that predicts garment worker productivity and provides an interactive dashboard for exploring performance trends.
 
 The project uses the **Garments Worker Productivity** dataset to train a regression model that estimates `actual_productivity` based on production line features such as department, targeted productivity, SMV, WIP, overtime, and more.
+
+This project is an Employee Performance Prediction dashboard built with FastAPI and a machine‑learning model trained on the “Garments Worker Productivity” dataset.​
+![Employee performance ML model ](image.png)
+Overview
+This application predicts employee productivity and visualizes key trends from a real manufacturing dataset.​
+It provides a simple web interface where users can explore data insights and generate productivity predictions for different teams and departments.​
 
 ---
 
@@ -249,3 +250,4 @@ What You Get as Output
 A working web dashboard to explore employee productivity data, visualize departmental performance, and predict productivity for new records.
 
 ![output](image-1.png)
+
