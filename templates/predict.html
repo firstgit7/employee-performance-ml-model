@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Employee Performance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #f4f6f9;
+            color: #495057;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .navbar {
+            background: #4e73df;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+        }
+        .container {
+            margin-top: 80px;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .btn-primary {
+            background: #4e73df;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 30px;
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(78, 115, 223, 0.3);
+        }
+        .btn-primary:hover {
+            background: #2e59d9;
+        }
+        .form-label {
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Employee Perf. Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/predict">Predict</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Predict Employee Performance</h5>
+                        <p class="text-center">Enter employee details below to get a productivity prediction. The model uses various features like department, targeted productivity, and more to provide accurate insights.</p>
+                        <form method="post" class="row g-3">
+                            <div class="col-md-6">
+                                <label for="quarter" class="form-label">Quarter</label>
+                                <input type="text" class="form-control" name="quarter" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="department" class="form-label">Department</label>
+                                <input type="text" class="form-control" name="department" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="day" class="form-label">Day</label>
+                                <input type="text" class="form-control" name="day" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="team" class="form-label">Team</label>
+                                <input type="number" class="form-control" name="team" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="targeted_productivity" class="form-label">Targeted Productivity</label>
+                                <input type="number" class="form-control" name="targeted_productivity" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="smv" class="form-label">SMV</label>
+                                <input type="number" class="form-control" name="smv" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="wip" class="form-label">WIP</label>
+                                <input type="number" class="form-control" name="wip" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="over_time" class="form-label">Over Time</label>
+                                <input type="number" class="form-control" name="over_time" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="incentive" class="form-label">Incentive</label>
+                                <input type="number" class="form-control" name="incentive" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="idle_time" class="form-label">Idle Time</label>
+                                <input type="number" class="form-control" name="idle_time" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="idle_men" class="form-label">Idle Men</label>
+                                <input type="number" class="form-control" name="idle_men" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="no_of_style_change" class="form-label">No. of Style Change</label>
+                                <input type="number" class="form-control" name="no_of_style_change" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="no_of_workers" class="form-label">No. of Workers</label>
+                                <input type="number" class="form-control" name="no_of_workers" required>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Predict</button>
+                            </div>
+                        </form>
+                        {% if prediction %}
+                            <div class="alert alert-success mt-3 text-center">Prediction: {{ prediction }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
